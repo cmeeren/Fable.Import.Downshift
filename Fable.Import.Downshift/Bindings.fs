@@ -2,9 +2,8 @@ module Fable.Import.Downshift
 
 open Fable.Core
 open Fable.Core.JsInterop
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
-open Fable.Import.React
+open Fable.React
+open Fable.React.Props
 
 
 let resetIdCounter () : unit =
@@ -78,7 +77,7 @@ type DownshiftProps<'Item> =
   | Children of (StateAndHelpers<'Item> -> ReactElement)
   | DefaultHighlightedIndex of int
   | DefaultIsOpen of bool
-  | Environment of Browser.Window
+  | Environment of Browser.Types.Window
   | GetA11yStatusMessage of (A11yStatusMessageOptions<'Item> -> string)
   | GetItemId of (int -> string)
   | HighlightedIndex of int option
@@ -100,7 +99,7 @@ type DownshiftProps<'Item> =
   | OnSelect of ('Item -> StateAndHelpers<'Item> -> unit)
   | OnStateChange of (StateChanges<'Item> -> StateAndHelpers<'Item> -> unit)
   | OnUserAction of (StateChanges<'Item> -> StateAndHelpers<'Item> -> unit)
-  | ScrollIntoView of (Browser.HTMLElement -> Browser.HTMLElement -> unit)
+  | ScrollIntoView of (Browser.Types.HTMLElement -> Browser.Types.HTMLElement -> unit)
   | SelectedItem of 'Item option
   | SelectedItemChanged of ('Item -> 'Item -> bool)
   | StateReducer of (DownshiftState<'Item> -> StateChanges<'Item> -> DownshiftState<'Item>)
@@ -154,7 +153,7 @@ module Internal =
     | Children of (RawStateAndHelpers<'Item> -> ReactElement)
     | DefaultHighlightedIndex of int option
     | DefaultIsOpen of bool
-    | Environment of Browser.Window
+    | Environment of Browser.Types.Window
     | GetA11yStatusMessage of (A11yStatusMessageOptions<'Item> -> string) option
     | GetItemId of (int -> string)
     | HighlightedIndex of int option
@@ -176,7 +175,7 @@ module Internal =
     | OnSelect of ('Item -> RawStateAndHelpers<'Item> -> unit)
     | OnStateChange of (StateChanges<'Item> -> RawStateAndHelpers<'Item> -> unit)
     | OnUserAction of (StateChanges<'Item> -> RawStateAndHelpers<'Item> -> unit)
-    | ScrollIntoView of (Browser.HTMLElement -> Browser.HTMLElement -> unit)
+    | ScrollIntoView of (Browser.Types.HTMLElement -> Browser.Types.HTMLElement -> unit)
     | SelectedItem of 'Item option
     | SelectedItemChanged of ('Item -> 'Item -> bool) option
     | StateReducer of (DownshiftState<'Item> -> StateChanges<'Item> -> DownshiftState<'Item>) option

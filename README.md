@@ -80,6 +80,10 @@ let view =
 Changelog
 ---------
 
+#### 1.1.0 (2019-05-02)
+
+* Updated for Fable.Core 3, Fable.React 5 and downshift 3.2
+
 #### 1.0.0 (2019-01-12)
 
 * Initial release
