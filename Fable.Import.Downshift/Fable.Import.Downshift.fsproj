@@ -3,18 +3,23 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Fable bindings for downshift 3.2.</Description>
+    <Description>Fable bindings for downshift.</Description>
     <PackageProjectUrl>https://github.com/cmeeren/Fable.Import.Downshift</PackageProjectUrl>
     <PackageId>Fable.Import.Downshift</PackageId>
     <Authors>Christer van der Meeren</Authors>
     <PackageLicenseUrl>https://github.com/cmeeren/Fable.Import.Downshift/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>f# fable bindings</PackageTags>
-    <PackageReleaseNotes>Updated for Fable.Core 3, Fable.React 5 and downshift 3.2</PackageReleaseNotes>
-    <Version>1.1.0</Version>
+    <PackageReleaseNotes>Add femto support</PackageReleaseNotes>
+    <Version>1.1.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bindings.fs" />
     <Content Include="*.fsproj; *.fs" PackagePath="fable\" />
   </ItemGroup>
+  <PropertyGroup>
+    <NpmDependencies>
+      <NpmPackage Name="downshift" Version="gte 3.2 lt 4" ResolutionStrategy="max" />
+    </NpmDependencies>
+  </PropertyGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
